@@ -19,4 +19,10 @@ export default defineConfig({
     }
   ],
   snapshotPathTemplate: '{testDir}/__screenshots__/{testName}{ext}',
+  webServer: {
+    command: 'npx vite',
+    url: 'http://localhost:3030',
+    reuseExistingServer: !process.env.CI, 
+    timeout: 120 * 1000,
+  },
 })
